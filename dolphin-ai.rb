@@ -48,6 +48,13 @@ MCP tool integration, skills, cron tasks, and multi-provider LLM support.
     end
   end
 
+  service do
+    run [opt_bin/"dolphin-ai", "setup"]
+    keep_alive true
+    log_path var/"log/dolphin-ai.log"
+    error_log_path var/"log/dolphin-ai.log"
+  end
+
   def caveats
     <<~EOS
       dolphin-ai is installed. Run `dolphin-ai setup` to get started.
