@@ -15,7 +15,7 @@ MCP tool integration, skills, cron tasks, and multi-provider LLM support.
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.1/dolphin-ai_0.2.1_macOS_x86_64.tar.gz"
-      sha256 "abc123"
+      sha256 "12c94d9946297f086f24fda1a252f01ae73c1c7c297f220755ce07ca7c07b6b1"
 
       define_method(:install) do
         bin.install "dolphin-ai"
@@ -23,7 +23,7 @@ MCP tool integration, skills, cron tasks, and multi-provider LLM support.
     end
     if Hardware::CPU.arm?
       url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.1/dolphin-ai_0.2.1_macOS_arm64.tar.gz"
-      sha256="def456"
+      sha256 "dfffa5d656366cd5448b8e5ae748e5a346a151083b28c501b878a2cd5fe99763"
 
       define_method(:install) do
         bin.install "dolphin-ai"
@@ -34,14 +34,14 @@ MCP tool integration, skills, cron tasks, and multi-provider LLM support.
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.1/dolphin-ai_0.2.1_linux_x86_64.tar.gz"
-      sha256="ghi789"
+      sha256 "c7683a1b0c5c6778b924580280ab44cbd68b50a818c9d9f461913f41fa87576d"
       define_method(:install) do
         bin.install "dolphin-ai"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.1/dolphin-ai_0.2.1_linux_arm64.tar.gz"
-      sha256="jkl012"
+      sha256 "0abd68c5bc065d1fb229e26dc26414812ef5cb4f764e1bac72fafee5bffa64e2"
       define_method(:install) do
         bin.install "dolphin-ai"
       end
