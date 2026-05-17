@@ -7,23 +7,23 @@ class DolphinAi < Formula
 MCP tool integration, skills, cron tasks, and multi-provider LLM support.
 "
   homepage "https://github.com/dolphinZzv/dolphin"
-  version "0.2.9"
+  version "0.2.10"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.9/dolphin-ai_0.2.9_macOS_x86_64.tar.gz"
-      sha256 "7055d0bad7b594a65c94efbbd6970e73674546c300e8e0371b201f176f9890a6"
+      url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.10/dolphin-ai_0.2.10_macOS_x86_64.tar.gz"
+      sha256 "fb4b2ee32245fe2e3b5eb203644a17186f769587f6fd894af7d1a43ef20aa4e2"
 
       define_method(:install) do
         bin.install "dolphin-ai"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.9/dolphin-ai_0.2.9_macOS_arm64.tar.gz"
-      sha256 "f1a1be484734c37d37fa0681e0b9e52973bd5ae2b51e51088dc66ede8fc679c1"
+      url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.10/dolphin-ai_0.2.10_macOS_arm64.tar.gz"
+      sha256 "2845d101ccbce9c0d629d75fdb5e162d2392d547dbe873726793e82b990393b8"
 
       define_method(:install) do
         bin.install "dolphin-ai"
@@ -33,26 +33,19 @@ MCP tool integration, skills, cron tasks, and multi-provider LLM support.
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.9/dolphin-ai_0.2.9_linux_x86_64.tar.gz"
-      sha256 "6cecf3b0e5e8666c3b4d89f160072cf9a7d388f04a3e6da4aca18515334d57b5"
+      url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.10/dolphin-ai_0.2.10_linux_x86_64.tar.gz"
+      sha256 "9d05596de2295422a6bcc80d79afab8173cadc2ee79b461683a273cd71e7f573"
       define_method(:install) do
         bin.install "dolphin-ai"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.9/dolphin-ai_0.2.9_linux_arm64.tar.gz"
-      sha256 "a51fac75163973d3be425d7a08e9fad63a1f5a29fbda23425979a9d6f60a30bd"
+      url "https://github.com/dolphinZzv/dolphin/releases/download/v0.2.10/dolphin-ai_0.2.10_linux_arm64.tar.gz"
+      sha256 "ac4a3124c9e62ad83786b683b234c7330139b9368bf85c56eb125098679e238d"
       define_method(:install) do
         bin.install "dolphin-ai"
       end
     end
-  end
-
-  service do
-    run [opt_bin/"dolphin-ai", "setup"]
-    keep_alive true
-    log_path var/"log/dolphin-ai.log"
-    error_log_path var/"log/dolphin-ai.log"
   end
 
   def caveats
